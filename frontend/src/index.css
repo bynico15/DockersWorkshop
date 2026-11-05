@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; }
+button, a { -webkit-tap-highlight-color: transparent; }
+
+#carrito {
+  display: flex;
+  flex-direction: column;
+}
+
+#carrito > div:nth-child(2) {
+  min-height: 0;
+  max-height: 45vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 0.5rem;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: #aab0a5 transparent;
+}
+
+#carrito > div:nth-child(2)::-webkit-scrollbar { width: 8px; }
+#carrito > div:nth-child(2)::-webkit-scrollbar-track { background: transparent; }
+#carrito > div:nth-child(2)::-webkit-scrollbar-thumb {
+  background: #aab0a5;
+  border: 2px solid #f1f0eb;
+  border-radius: 999px;
+}
+#carrito > div:nth-child(2)::-webkit-scrollbar-thumb:hover { background: #737870; }
+
+#carrito > div:first-child,
+#carrito > div:last-child {
+  flex-shrink: 0;
+}
+
+@media (min-width: 1024px) {
+  #carrito {
+    height: max(100vh, 32rem);
+  }
+
+  #carrito > div:nth-child(2) {
+    flex: 1 1 auto;
+    max-height: none;
+  }
+}
